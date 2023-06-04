@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `.container {\n  color: red;\n}\n`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://weather-forecast/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, ``, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://weather-forecast/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -110,13 +110,43 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/data/get-data.js":
+/*!******************************!*\
+  !*** ./src/data/get-data.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getData)\n/* harmony export */ });\n/* harmony import */ var _process_location_time_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./process-location&time-data */ \"./src/data/process-location&time-data.js\");\n/* harmony import */ var _process_temperature_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./process-temperature-data */ \"./src/data/process-temperature-data.js\");\n/* eslint-disable indent */\n// weather api key = c9b11d828e584e6d948132325233005\n\n\n\n\nasync function getData(location) {\n    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=c9b11d828e584e6d948132325233005&q=${location}`, { mode: 'cors' });\n    const weatherData = await response.json();\n    (0,_process_location_time_data__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(weatherData);\n    (0,_process_temperature_data__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(weatherData);\n}\n\n\n//# sourceURL=webpack://weather-forecast/./src/data/get-data.js?");
+
+/***/ }),
+
+/***/ "./src/data/process-location&time-data.js":
+/*!************************************************!*\
+  !*** ./src/data/process-location&time-data.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ processAllLocationData)\n/* harmony export */ });\n/* eslint-disable no-use-before-define */\n/* eslint-disable indent */\n\nfunction processAllLocationData(location) {\n    processCity(location);\n    processCounry(location);\n    processLocalTime(location);\n    processRegion(location);\n    processTimeZone(location);\n}\n\nfunction processCity(location) {\n    console.log(location.location.name);\n}\n\nfunction processCounry(location) {\n    console.log(location.location.country);\n}\n\nfunction processLocalTime(location) {\n    console.log(location.location.localtime);\n}\n\nfunction processRegion(location) {\n    console.log(location.location.region);\n}\n\nfunction processTimeZone(location) {\n    console.log(location.location.tz_id);\n}\n\n\n//# sourceURL=webpack://weather-forecast/./src/data/process-location&time-data.js?");
+
+/***/ }),
+
+/***/ "./src/data/process-temperature-data.js":
+/*!**********************************************!*\
+  !*** ./src/data/process-temperature-data.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ processAllTemparatureData)\n/* harmony export */ });\n/* eslint-disable no-use-before-define */\n/* eslint-disable indent */\n\nfunction processAllTemparatureData(location) {\n    processTempatureCelcius(location);\n    processTempatureFahrenheit(location);\n    processFeelslikeCelcius(location);\n    processFeelslikeFahrenheit(location);\n    processHumitidy(location);\n    processWindKilometers(location);\n    processWindMiles(location);\n    processCondition(location);\n}\n\nfunction processTempatureCelcius(location) {\n    console.log(location.current.temp_c);\n}\n\nfunction processTempatureFahrenheit(location) {\n    console.log(location.current.temp_f);\n}\n\nfunction processFeelslikeCelcius(location) {\n    console.log(location.current.feelslike_c);\n}\nfunction processFeelslikeFahrenheit(location) {\n    console.log(location.current.feelslike_f);\n}\n\nfunction processHumitidy(location) {\n    console.log(location.current.humidity);\n}\n\nfunction processWindKilometers(location) {\n    console.log(location.current.wind_kph);\n}\n\nfunction processWindMiles(location) {\n    console.log(location.current.wind_mph);\n}\n\nfunction processCondition(location) {\n    console.log(location.current.condition.text);\n}\n\n\n//# sourceURL=webpack://weather-forecast/./src/data/process-temperature-data.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst container = document.getElementById('container');\nconst newTitle = document.createElement('h1');\nnewTitle.innerHTML = 'hello world';\ncontainer.appendChild(newTitle);\n\n\n//# sourceURL=webpack://weather-forecast/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _data_get_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/get-data */ \"./src/data/get-data.js\");\n\n\n\n(0,_data_get_data__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('london');\n\n\n//# sourceURL=webpack://weather-forecast/./src/index.js?");
 
 /***/ })
 
