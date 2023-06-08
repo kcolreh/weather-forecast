@@ -2,43 +2,46 @@
 /* eslint-disable indent */
 
 export default function processAllTemparatureData(location) {
-    processTempatureCelcius(location);
-    processTempatureFahrenheit(location);
-    processFeelslikeCelcius(location);
-    processFeelslikeFahrenheit(location);
-    processHumitidy(location);
-    processWindKilometers(location);
-    processWindMiles(location);
-    processCondition(location);
+    const temperatureObj = {
+        tempatureCelcius: processTempatureCelcius(location),
+        tempatureFahrenheit: processTempatureFahrenheit(location),
+        feelslikeCelcius: processFeelslikeCelcius(location),
+        feelslikeFahrenheit: processFeelslikeFahrenheit(location),
+        humitidy: processHumitidy(location),
+        windKilometers: processWindKilometers(location),
+        windMiles: processWindMiles(location),
+        condition: processCondition(location),
+    };
+    console.log(temperatureObj);
 }
 
 function processTempatureCelcius(location) {
-    console.log(location.current.temp_c);
+    return location.current.temp_c;
 }
 
 function processTempatureFahrenheit(location) {
-    console.log(location.current.temp_f);
+    return location.current.temp_f;
 }
 
 function processFeelslikeCelcius(location) {
-    console.log(location.current.feelslike_c);
+    return location.current.feelslike_c;
 }
 function processFeelslikeFahrenheit(location) {
-    console.log(location.current.feelslike_f);
+    return location.current.feelslike_f;
 }
 
 function processHumitidy(location) {
-    console.log(location.current.humidity);
+    return location.current.humidity;
 }
 
 function processWindKilometers(location) {
-    console.log(location.current.wind_kph);
+    return location.current.wind_kph;
 }
 
 function processWindMiles(location) {
-    console.log(location.current.wind_mph);
+    return location.current.wind_mph;
 }
 
 function processCondition(location) {
-    console.log(location.current.condition.text);
+    return location.current.condition.text;
 }

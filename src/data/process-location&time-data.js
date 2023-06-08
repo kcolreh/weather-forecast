@@ -2,29 +2,32 @@
 /* eslint-disable indent */
 
 export default function processAllLocationData(location) {
-    processCity(location);
-    processCounry(location);
-    processLocalTime(location);
-    processRegion(location);
-    processTimeZone(location);
+    const locationObj = {
+        region: processRegion(location),
+        country: processCounry(location),
+        city: processCity(location),
+        timeZone: processTimeZone(location),
+        time: processLocalTime(location),
+    };
+    console.log(locationObj);
 }
 
 function processCity(location) {
-    console.log(location.location.name);
+    return location.location.name;
 }
 
 function processCounry(location) {
-    console.log(location.location.country);
+    return location.location.country;
 }
 
 function processLocalTime(location) {
-    console.log(location.location.localtime);
+    return location.location.localtime;
 }
 
 function processRegion(location) {
-    console.log(location.location.region);
+    return location.location.region;
 }
 
 function processTimeZone(location) {
-    console.log(location.location.tz_id);
+    return location.location.tz_id;
 }
