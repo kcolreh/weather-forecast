@@ -1,5 +1,6 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable indent */
+import { loadLocationCardData } from '../interface/weatherLocation-card';
 
 export default function processAllLocationData(location) {
     const locationObj = {
@@ -9,6 +10,7 @@ export default function processAllLocationData(location) {
         timeZone: processTimeZone(location),
         time: processLocalTime(location),
     };
+    loadLocationCardData(locationObj);
     console.log(locationObj);
 }
 

@@ -1,0 +1,30 @@
+.card-container {
+  display: flex;
+  border: black 10px solid;
+  padding: 1rem;
+  justify-content: space-around;
+}
+
+.weatherLocation-card {
+  display: flex;
+  flex-direction: column;
+  border: solid 5px black;
+  width: 250px;
+  padding: 1rem;
+}
+
+.weatherLocation-card > p {
+  padding: 5px;
+}
+
+.weatherTemperature-card {
+  display: flex;
+  flex-direction: column;
+  border: solid 5px black;
+  width: 250px;
+  padding: 1rem;
+}
+
+.weatherTemperature-card > p {
+  padding: 5px;
+}

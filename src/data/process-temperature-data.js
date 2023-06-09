@@ -1,5 +1,6 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable indent */
+import { loadTemperatureCardData } from '../interface/weatherTemperature-card';
 
 export default function processAllTemparatureData(location) {
     const temperatureObj = {
@@ -12,6 +13,7 @@ export default function processAllTemparatureData(location) {
         windMiles: processWindMiles(location),
         condition: processCondition(location),
     };
+    loadTemperatureCardData(temperatureObj);
     console.log(temperatureObj);
 }
 
