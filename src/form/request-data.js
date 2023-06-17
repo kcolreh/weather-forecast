@@ -1,13 +1,12 @@
 /* eslint-disable indent */
 
-import getData from '../data/get-data';
+import validateForm from './form-validation';
 
 export default function sendUserInput() {
     const requestBtn = document.getElementById('form-btn');
-    const userInput = document.getElementById('location-input');
 
     requestBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        getData(userInput.value);
+        validateForm();
     });
 }
