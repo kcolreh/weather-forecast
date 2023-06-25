@@ -10,6 +10,7 @@ export default async function getData(location) {
         const weatherData = await response.json();
         processAllLocationData(weatherData);
         processAllTemparatureData(weatherData);
+        console.log(weatherData);
     } catch (error) {
         console.log(error);
         alert('enter a valid country');

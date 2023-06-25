@@ -5,7 +5,6 @@
 import getData from '../data/get-data';
 
 export default function validateForm() {
-    const form = document.getElementById('form');
     const formBtn = document.getElementById('form-btn');
     const input = document.getElementById('location-input');
     const inputError = document.getElementById('location-input-error');
@@ -26,12 +25,11 @@ export default function validateForm() {
     });
 
     formBtn.addEventListener('click', (event) => {
-        console.log(typeof form);
         for (const city of cities) {
             if (city.toLocaleLowerCase() !== input.value) {
                 event.preventDefault();
                 showError();
-            } else if (input.value === city.toLowerCase()) {
+            } else if (input.value === city.toLowerCase() && input.value !== '') {
                 inputError.textContent = '';
                 inputError.className = 'error';
                 getData(input.value);

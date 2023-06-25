@@ -16,29 +16,37 @@ function createrLocationCard() {
     const cardContainer = document.getElementById('card-container');
     const newCard = createDiv('weatherLocation-card', 'weatherLocation-card');
     const newCardTitle = createTitle('weather-title', 'weather-card-title', 2);
-    const newCardCountry = createParagraph('paragraph-country', 'paragraph-country');
     const newCardTime = createParagraph('paragraph-time', 'paragraph-time');
-    const newCardRegion = createParagraph('paragraph-region', 'paragraph-region');
-    const newCardTimeZone = createParagraph('paragraph-timeZone', 'paragraph-timeZone');
+    const newCardTemperatureC = createParagraph('paragraph-temperatureC', 'paragraph-temperatureC');
+
+    // const newCardCountry = createParagraph('paragraph-country', 'paragraph-country');
+    // const newCardRegion = createParagraph('paragraph-region', 'paragraph-region');
+    // const newCardTimeZone = createParagraph('paragraph-timeZone', 'paragraph-timeZone');
 
     cardContainer.appendChild(newCard);
     newCard.appendChild(newCardTitle);
-    newCard.appendChild(newCardCountry);
     newCard.appendChild(newCardTime);
-    newCard.appendChild(newCardRegion);
-    newCard.appendChild(newCardTimeZone);
+    newCard.appendChild(newCardTemperatureC);
+
+    // newCard.appendChild(newCardCountry);
+    // newCard.appendChild(newCardRegion);
+    // newCard.appendChild(newCardTimeZone);
 }
 
 export function loadLocationCardData(weatherData) {
     const weatherTitle = document.getElementById('weather-title');
-    const weatherCountry = document.getElementById('paragraph-country');
     const weatherTime = document.getElementById('paragraph-time');
-    const weatherRegion = document.getElementById('paragraph-region');
-    const weatherTimeZone = document.getElementById('paragraph-timeZone');
+    const weatherTemperatureC = document.getElementById('paragraph-temperatureC');
+
+    // const weatherCountry = document.getElementById('paragraph-country');
+    // const weatherRegion = document.getElementById('paragraph-region');
+    // const weatherTimeZone = document.getElementById('paragraph-timeZone');
 
     weatherTitle.innerHTML = weatherData.city;
-    weatherCountry.innerHTML = weatherData.country;
+    weatherTemperatureC.innerHTML = `${weatherData.tempatureCelcius}c`;
     weatherTime.innerHTML = weatherData.time;
-    weatherRegion.innerHTML = weatherData.region;
-    weatherTimeZone.innerHTML = weatherData.timeZone;
+
+    // weatherCountry.innerHTML = weatherData.country;
+    // weatherRegion.innerHTML = weatherData.region;
+    // weatherTimeZone.innerHTML = weatherData.timeZone;
 }

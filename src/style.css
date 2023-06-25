@@ -1,48 +1,185 @@
+* {
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+p,
+body {
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-image: url(./images/main-background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .card-container {
   display: flex;
-  border: black 10px solid;
+  flex-direction: column;
+  border: rgba(0, 0, 0, 0.048) 10px solid;
   padding: 1rem;
-  justify-content: space-around;
+  align-items: center;
 }
+/* card 1 */
 
 .weatherLocation-card {
   display: flex;
   flex-direction: column;
-  border: solid 5px black;
-  width: 250px;
+  border: solid 5px rgba(0, 0, 0, 0.071);
+  width: 100vw;
   padding: 1rem;
+}
+
+.weather-card-title {
+  font-size: 2.5rem;
+  align-self: center;
+  margin: 0;
+}
+
+.paragraph-time {
+  font-size: 0.8rem;
+  align-self: center;
+}
+
+.paragraph-temperatureC {
+  font-size: 1.5rem;
+  align-self: center;
 }
 
 .weatherLocation-card > p {
   padding: 5px;
 }
 
+/* card 2 */
+
 .weatherTemperature-card {
   display: flex;
   flex-direction: column;
-  border: solid 5px black;
-  width: 250px;
+  border: solid 5px rgba(0, 0, 0, 0.073);
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
 }
 
-.weatherTemperature-card > p {
-  padding: 5px;
+.weather-card-condition {
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 25px;
+  margin-top: 7rem;
+  margin-left: 32px;
+  width: 300px;
+}
+
+.info-container-1,
+.info-container-2,
+.info-container-3,
+.info-container-4 {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: left;
+  margin-left: 2rem;
+}
+
+.info-para {
+  margin: 0px 50px 0px 50px;
+  font-size: larger;
+}
+
+.info-container-1 {
+  display: flex;
+}
+
+.feels-img {
+  height: 50px;
+  width: 50px;
+}
+.paragraph-feelsLikeC {
+  margin-left: -21px;
+}
+.info-container-2 {
+  display: flex;
+}
+
+.humidity-img {
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+
+.paragraph-humitidy {
+  margin-left: 2px;
+}
+
+.info-container-3 {
+  display: flex;
+}
+
+.paragraph-windK {
+  margin-left: -21px;
+}
+
+.wind-img {
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+
+.paragraph-rain {
+  margin-left: -32px;
+}
+
+/* card 3 */
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  margin-top: 50px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* input */
 
+.input {
+  width: 200px;
+  margin-left: 22px;
+  color: black;
+  padding: 3px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.input-btn {
+  background-color: transparent;
+  border: white solid 3px;
+  font-size: large;
+  margin-left: 10px;
+  height: 25px;
+}
+
 .location-input-error {
   width: 100%;
   padding: 0;
-
   font-size: 80%;
-  color: white;
   background-color: #900;
   border-radius: 0 0 5px 5px;
-
   box-sizing: border-box;
 }
 
 .error.active {
   padding: 0.3em;
+  margin-left: 22px;
+  margin-top: 10px;
+  font-size: 12px;
 }

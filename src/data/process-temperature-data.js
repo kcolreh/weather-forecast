@@ -4,25 +4,16 @@ import { loadTemperatureCardData } from '../interface/weatherTemperature-card';
 
 export default function processAllTemparatureData(location) {
     const temperatureObj = {
-        tempatureCelcius: processTempatureCelcius(location),
-        tempatureFahrenheit: processTempatureFahrenheit(location),
         feelslikeCelcius: processFeelslikeCelcius(location),
         feelslikeFahrenheit: processFeelslikeFahrenheit(location),
         humitidy: processHumitidy(location),
         windKilometers: processWindKilometers(location),
         windMiles: processWindMiles(location),
         condition: processCondition(location),
+        rainPrecipitationMm: processRainPrecipitation(location),
     };
     loadTemperatureCardData(temperatureObj);
     console.log(temperatureObj);
-}
-
-function processTempatureCelcius(location) {
-    return location.current.temp_c;
-}
-
-function processTempatureFahrenheit(location) {
-    return location.current.temp_f;
 }
 
 function processFeelslikeCelcius(location) {
@@ -46,4 +37,8 @@ function processWindMiles(location) {
 
 function processCondition(location) {
     return location.current.condition.text;
+}
+
+function processRainPrecipitation(location) {
+    return location.current.precip_mm;
 }

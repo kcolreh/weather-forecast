@@ -9,6 +9,9 @@ export default function processAllLocationData(location) {
         city: processCity(location),
         timeZone: processTimeZone(location),
         time: processLocalTime(location),
+        tempatureCelcius: processTempatureCelcius(location),
+        tempatureFahrenheit: processTempatureFahrenheit(location),
+
     };
     loadLocationCardData(locationObj);
     console.log(locationObj);
@@ -32,4 +35,12 @@ function processRegion(location) {
 
 function processTimeZone(location) {
     return location.location.tz_id;
+}
+
+function processTempatureCelcius(location) {
+    return location.current.temp_c;
+}
+
+function processTempatureFahrenheit(location) {
+    return location.current.temp_f;
 }
