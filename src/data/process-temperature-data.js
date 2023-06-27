@@ -40,5 +40,9 @@ function processCondition(location) {
 }
 
 function processRainPrecipitation(location) {
-    return location.current.precip_mm;
+    let forecast;
+    if (location.forecast !== undefined) {
+        forecast = location.forecast.forecastday[0].day.daily_chance_of_rain;
+    }
+    return forecast;
 }

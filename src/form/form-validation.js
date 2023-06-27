@@ -2,7 +2,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable indent */
 
-import getData from '../data/get-data';
+import { getData, getForecast } from '../data/get-data';
 
 export default function validateForm() {
     const formBtn = document.getElementById('form-btn');
@@ -33,6 +33,7 @@ export default function validateForm() {
                 inputError.textContent = '';
                 inputError.className = 'error';
                 getData(input.value);
+                getForecast(input.value);
                 break;
             }
         }
